@@ -1,0 +1,17 @@
+<div class="confirmation-container">
+    <div class="confirmation-items">
+    <div class="confirmation-header">
+        SUCCESS
+    </div>
+        <p class="comfirmation-item">
+            Thank you, <span class="lead">{{ billingInfo.fullname || 'CUSTOMER' }}</span>
+        </p>
+        <p class="comfirmation-item">
+            Your <span>$ {{billingInfo.total}}</span> order is confirmed!
+        </p>
+        <p class="comfirmation-item">
+            Please allow 1-3 business day(s) for shipping.
+        </p>
+        <button class="btn btn-primary" (click)="onBack()">Back to product list.</button>
+    </div>
+</div>

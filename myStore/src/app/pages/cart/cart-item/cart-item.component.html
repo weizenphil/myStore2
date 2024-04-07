@@ -1,0 +1,8 @@
+<div class="cart-item">
+    <img class="img" src="{{product.url}}" alt="name" />
+    <div class="cart-panel">
+        <p>{{ product.name }}</p>
+        <p>$ {{ product.price }}</p>
+        <input class="input-number" type="number" min="0" value="{{product.counter}}" (change)="onCounterChange($event)"/>
+    </div>
+</div>

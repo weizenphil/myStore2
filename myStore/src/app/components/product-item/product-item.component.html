@@ -1,0 +1,13 @@
+<div class="product-container">
+    <img class="product-image" src="{{this.product.url}}" alt="{{ this.product.name }}"  (click)="onClick()" />
+    <p>{{ this.product.name }}</p>
+    <p>$ {{ this.product.price }}</p>
+    <select class="select-input" (change)="onChangeCounter($event)" value="{{this.product.counter}}" [ngModel]="this.product.counter">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <input type="button" class="btn btn-primary" value="add to cart" (click)="this.onAddingToCartEvent.emit(product)" />
+</div>
