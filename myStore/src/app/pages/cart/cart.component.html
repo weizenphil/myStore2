@@ -21,6 +21,8 @@
                     </p>
                 </div>
             </div>
+        </form>
+        <form #form2="ngForm" class="form-group" (ngSubmit)="onSubmit()">
             <div class="cart-input">
                 <label>Address</label>
                 <br />
@@ -31,18 +33,20 @@
                     </p>
                 </div>
             </div>
+        </form>
+        <form #form3="ngForm" class="form-group" (ngSubmit)="onSubmit()">
             <div class="cart-input">
                 <label>Credit card number</label>
                 <br />
-                <input class="form-control" type="number" minlength="16" [maxLength]="16" required [(ngModel)]="creditCardNumber" placeholder="(16-digit number)" name="text" />
+                <input class="form-control" [(ngModel)]="creditCardNumber" required minlength="16" maxLength="16"   placeholder="(16-digit number)" name="text" />
                 <div class="error-alert" *ngIf="creditCardNumber !== ''">
                     <p *ngIf="creditCardNumber.toString().length !== 16">
                         Credit card should be with 16 characters.
                     </p>
                 </div>
             </div>
-            <p>We'll never share your payment details with anyone else.</p>
-            <input type="submit" value="submit" [disabled]="form.invalid" class="btn btn-primary">
         </form>
+            <p>We'll never share your payment details with anyone else.</p>
+            <input type="submit" value="submit" [disabled]="form.form.invalid || form2.form.invalid || form3.form.invalid" class="btn btn-primary">
     </div>
 </ng-template>
